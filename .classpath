@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="src" path="zql"/>
+	<classpathentry kind="src" path="jline-0.9.94"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="dist/simpledb.jar"/>
+	<classpathentry kind="lib" path="lib/ant-contrib-1.0b3.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/51375/Downloads/eecs339/eecs339-lab2/jline-0.9.94.jar"/>
+	<classpathentry kind="lib" path="C:/Users/51375/Downloads/eecs339/eecs339-lab2/zql.jar" sourcepath="C:/Users/51375/Downloads/eecs339/eecs339-lab2/zql.jar">
+		<attributes>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin/src"/>
+</classpath>

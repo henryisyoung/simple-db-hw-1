@@ -1,0 +1,41 @@
+﻿Writeup for lab2
+
+The implementation of some classes is very simple, such as Tuple, TupleDesc, HeapPageId, etc. I just wrote the constructor and some basic functions in the class. What I want 
+to discuss mainly are the problems I met and decisions I made in implementing some classes.
+
+1.When implementing the Catalog class, I create a private class Table for future operation with tables. To fetch the table name and tuple description conveniently, I create 
+two hash maps: between name and tables, and between tableid and tupledesc. Once the hash map is initialized, it becomes easy to get what we want.
+
+2.Implementing HeapPage and HeapFile class is the first big challenge for me. There are three main problems:
+
+a.Decide the number of tuples. To calculate that, I need to understand exactly how the tuples are stored. However, using the equation directly from the guide document 
+will cause a mistake is subsequent works, because if we don’t use double for calculation, the result will be wrong. I find that until I implement the SeqScan class, that I 
+can’t return the correct answer whatever changes I make. After I add (double) to calculate the number of tuples, so as headerBytes and offsets, the result is correct.
+
+b. Implement the HeapFile iterator. This iterator is difference from tuples, because we need to read through the file to get the tuples. This isn’t a simple work, so I 
+create a class of HeapFileIterator to implement this. This class implements the DbFileIterator class, and it reads data from the BufferPool, tuple by tuple, and page by page. The 
+HeapFileIterator is also used in implementing SeqScan class, because SeqScan is just to iterator through a HeapFile.
+
+Another decision is that, at the beginning, I define the HeapFileIterator as a private class in HeapFile. But later on, when I implement SeqScan, I find it inconvenient to 
+call the iterator, so I create it as a public class instead.
+
+c. isSlotFree() method. At first, I don’t know how to get the offset. I think of use remainder but don’t know how to operate exactly. Then I find the tuples and slots are 
+described like a bitmap, and I can use >>remainder to get the result.
+
+
+3.SeqScan class. 
+
+a.As mentioned above, I can’t pass the SeqScan test after my implementation, because of the wrong number of tuples. After I changed the way of getting number of tuples, the
+ problem is solved successfully.
+
+b. The rewind() function. At first I think rewind process is just close() and open(). But when I do this, it will return a NullPointerException. That is because when I 
+close(), I make the variables to be null, but the variables are initialized when constructing. Open() doesn’t have a initialize the variables so some of them will be null 
+when I use them as parameters. So I understand that rewind should only make the page number to zero and call open().
+
+
+
+A small problem left: Although I have passed all the Junit test, I didn’t get a right answer from the test.java. I find that when I convert .txt file to .dat file, some 
+information is missed, causing that the result won’t have the last tuple.
+
+Time Spent: I spent about 3 hours a day on the lab for one week, so totally I spent about 20 hours on the lab.
+
