@@ -1,0 +1,16 @@
+@@ -465,7 +465,6 @@
+         synchronized (Database.getBufferPool()) {
+             synchronized(this) {
+                 preAppend();
+-                // some code goes here
+             }
+         }
+     }
+@@ -492,7 +491,6 @@
+         synchronized (Database.getBufferPool()) {
+             synchronized (this) {
+                 recoveryUndecided = false;
+-                // some code goes here
+             }
+          }
+     }

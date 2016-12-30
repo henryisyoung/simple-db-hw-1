@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/51375/Downloads/eecs339/eecs339-lab2/jline-0.9.94.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/51375/Downloads/eecs339/eecs339-lab2/zql.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/51375/Downloads/eecs339/eecs339-lab2/apache-ant-1.9.7-bin.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

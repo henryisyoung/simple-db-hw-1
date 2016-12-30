@@ -1,0 +1,17 @@
+1.Design decisions:
+
+a.IntHistogram.java: When implementing this file, the core function is estimateSelectivity(). We need to carefully consider every condition to avoid mistakes. Under this circumstance, I firstly consider that the
+value is out of bound of the histogram, which will only return 1 or 0, according to the type of operation. For other cases, I need to calculate with iteration. This is not so difficult, after I have implemented
+the basic arrays and variables of the IntHistogram class.
+
+b.TableStats.java: The most difficult part is the constructor. To scan the values of the tuples, I use the iterator implemented in the previous lab. Then I need to scan the histogram for many times, to determine
+the max and min values, and to assign the specific part of histogram. Since the operation uses dbfileiterator, I first think of add Exception to the function, but later on I find that using try-catch is a better
+way.
+
+Having the constructor, we build the histogram, and to calculate the cost or selectivity will be easy.
+
+c.JoinOptimizer.java: To estimate cost is just a math problem. The key to the implementation is the orderJoins function. I have not implemented new functions as a replacement of enumerateSubsets(), and with the help
+of it and computeCostAndCardOfSubplan(), PlanCache class, all I need to do is iterating through the joins, and selecting the best cost plan for each join. In this implementation, I misused the number of joins in my
+iteration at first, that I use i<numjoins as the condition, which will be 1 less than the real number, leading to a wrong output.
+
+2. Due to time limit, I haven't implemented the bonus exercises. I have just finished the basic function required by the lab and passed the test. I spent about 10-15 hours on the lab.
