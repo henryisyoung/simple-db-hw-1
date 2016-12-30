@@ -1,1 +1,1 @@
-Implementation of optimization.
+Query optimization.
