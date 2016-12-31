@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>lab1</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>jline-0.9.94</name>
+			<type>2</type>
+			<location>C:/Users/51375/Downloads/eecs339/eecs339-lab2/jline-0.9.94</location>
+		</link>
+		<link>
+			<name>zql</name>
+			<type>2</type>
+			<location>C:/Users/51375/Downloads/eecs339/eecs339-lab2/zql</location>
+		</link>
+	</linkedResources>
+</projectDescription>

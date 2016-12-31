@@ -1,0 +1,41 @@
+@@ -10,13 +10,10 @@
+      * @param pgNo The page number in that table.
+      */
+     public HeapPageId(int tableId, int pgNo) {
+-        // some code goes here
+     }
+ 
+     /** @return the table associated with this PageId */
+     public int getTableId() {
+-        // some code goes here
+-        return 0;
+     }
+ 
+     /**
+@@ -24,8 +21,6 @@
+      *   this PageId
+      */
+     public int pageNumber() {
+-        // some code goes here
+-        return 0;
+     }
+ 
+     /**
+@@ -35,8 +30,6 @@
+      * @see BufferPool
+      */
+     public int hashCode() {
+-        // some code goes here
+-        throw new UnsupportedOperationException("implement this");
+     }
+ 
+     /**
+@@ -47,8 +40,6 @@
+      *   ids are the same)
+      */
+     public boolean equals(Object o) {
+-        // some code goes here
+-        return false;
+     }
+ 
+     /**

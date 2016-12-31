@@ -1,0 +1,39 @@
+1.Decision:
+
+a.Patch:When I used the patch command in Linux, I found many mistakes and .rej files generated, then I chose 
+Eclipse->Apply Patch, which also generated .rej files but I fixed files by myself. I added some variables such
+as random and changed the name of 'page' in the Bufferpool.java, then I could get started on my work.
+
+b.Search: The only problem I met in implementing findLeafPage is that I forgot to change the permission of 
+internal page. At first, I used 'perm' as a parameter both in leafpage and internal page. Later I found that 
+internal page should only be read, then I changed the permission and recursively read until leaf page. 
+
+c.Insert: Chances are we may omit some processes when implementing the insert operation, which I think is the 
+difficulty of this part. For example, at first I forgot to change the pointer of the old right sibling, and I 
+also forgot to put the used pages into dirtypages. Another difficulty is that I didn't use reverse iterator at 
+the beginning. Calculating the exact position of the tuple is really annoying, then I found the reverseIterator 
+and it really helped me a lot.
+
+When implementing split internal page, I met another problem in deleting the entry of child pages, since I first 
+updated the child entry and then deleted it from the page, which means that the entry can no longer be found 
+in the pages. It's really difficult to find every small mistake I made in the implementation.
+
+d.Delete:  Steal from leaf page is fairly easy to implement. I made the same mistake with insertion that I 
+updated the entry before deleting it. Another mistake is that I didn't exchange the key between parent and child.
+Instead, I just set the key of parent to the new value, which led to a mistake in testing. 
+
+The only confusion in this implementation for me is deleteParentEntry, because I misunderstood the meaning of 
+the parameter leftPage as the page to be deleted at first, which is actually the page left after the deletion. 
+
+2. Changes outside BTreeFile.java:
+
+This is mainly to repair the original files such as Bufferpool. I added a new Random variable random for use, 
+and changed the name of the hashmap of pageId->pages to pages. Besides, I copied the implementation of 
+some functions for the first lab, such as evictPage(), which should be generated from the Patch file but not.
+
+3.Time in the lab: I spent about 15 hours, including some hours of reviewing the deleting process of B+ tree 
+in the textbook. 
+
+I think the lab is really helpful for us to understand the process of inserting and deleting. A suggestion is 
+that it will be better to see what the tree actually is before and after the operations, so we will have a 
+deeper understanding of what we have done.
